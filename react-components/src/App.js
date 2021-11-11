@@ -5,10 +5,11 @@ import Counter from './components/Counter';
 
 
 const booksData = [
-    { title: "Harry Potter", desription: "Wizards and stuff" },
+    { title: "Harry Potter", description: "Wizards and stuff", author: "Author" },
     { title: "Programming with JS", description: "Guide to programming" },
     { title: "The Bible", description: "Most important Book" },
-    { title: "Chronicles of Narnia", description: "Adventure" },
+    { title: "Chronicles of Narnia", description: "Nice book" },
+    { title: null, description: "Missing Book" }
 ];
 
 
