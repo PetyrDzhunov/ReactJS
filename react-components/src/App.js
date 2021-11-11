@@ -20,6 +20,7 @@ function App() {
                 <h2>Favourite Book</h2>
             </Heading>
             <Counter />
+            <Counter />
             <BookList books={booksData} />
         </div>
     );
