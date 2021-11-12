@@ -18,6 +18,7 @@ class BookList extends React.Component {
 				<h2>Our Book Collection</h2>
 				{this.props.books.map(x => {
 					return <Book
+						key={x._id}
 						title={x.title}
 						author={x.author}
 						description={x.description}

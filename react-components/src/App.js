@@ -2,16 +2,24 @@ import './App.css';
 import Heading from './components/Heading';
 import BookList from './components/BookList';
 import Counter from './components/Counter';
+import CarsList from './components/CarsList';
 
 
 const booksData = [
-    { title: "Harry Potter", description: "Wizards and stuff", author: "Author" },
-    { title: "Programming with JS", description: "Guide to programming" },
-    { title: "The Bible", description: "Most important Book" },
-    { title: "Chronicles of Narnia", description: "Nice book" },
-    { title: null, description: "Missing Book" }
+    { _id: 1, title: "Harry Potter", description: "Wizards and stuff", author: "Author" },
+    { _id: 2, title: "Programming with JS", description: "Guide to programming" },
+    { _id: 3, title: "The Bible", description: "Most important Book" },
+    { _id: 4, title: "Chronicles of Narnia", description: "Nice book" },
+    { _id: 5, title: null, description: "Missing Book" }
 ];
 
+const carsData = [
+    { brand: "Audi", model: "A4" },
+    { brand: "Kia", model: "Ceed" },
+    { brand: "Ford", model: "Mondeo" },
+    { brand: "Seat", model: "Leon" },
+    { brand: "Golf", model: "IV" }
+];
 
 function App() {
     return (
@@ -23,6 +31,7 @@ function App() {
             <Counter />
             <Counter />
             <BookList books={booksData} />
+            {/* <CarsList cars={carsData} /> */}
         </div>
     );
 }
