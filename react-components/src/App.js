@@ -6,13 +6,6 @@ import CarsList from './components/CarsList';
 import Footer from './components/Footer';
 
 
-const booksData = [
-    { _id: 1, title: "Harry Potter", description: "Wizards and stuff", author: "Author" },
-    { _id: 2, title: "Programming with JS", description: "Guide to programming" },
-    { _id: 3, title: "The Bible", description: "Most important Book" },
-    { _id: 4, title: "Chronicles of Narnia", description: "Nice book" },
-    { _id: 5, title: null, description: "Missing Book" }
-];
 
 
 function App() {
@@ -24,7 +17,7 @@ function App() {
             </Heading>
             <Counter />
             <Counter />
-            <BookList books={booksData} />
+            <BookList />
             {/* <CarsList cars={carsData} /> */}
             <Footer />
         </div>

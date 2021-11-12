@@ -1,3 +1,5 @@
+import style from './Book.module.css';
+
 const Book = (props) => {
 	// if (!props.title) {
 	// 	return (
@@ -8,10 +10,10 @@ const Book = (props) => {
 	// }
 	let author = props.author || "Unknown";
 	return (
-		<article>
+		<article className={style.article}>
 			<h3 onClick={props.clickHandler}>{props.title}</h3>
-			<p>{props.description}</p>
-			<p>Author: {author}</p>
+			<p className={style.description}>{props.description}</p>
+			<p className={style.author}>Author: {author}</p>
 		</article>
 	);
 };

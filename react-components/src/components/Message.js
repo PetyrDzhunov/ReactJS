@@ -1,4 +1,5 @@
 import React from "react";
+import './Message.css';
 
 class Message extends React.Component {
 	constructor(props) {
@@ -27,14 +28,14 @@ class Message extends React.Component {
 
 
 	render() {
-		let classes = [];
+		// let classes = ['default-class'];
 
-		if (true) {
-			classes.push('selected-book');
-		};
+		// if (true) {
+		// 	classes.push('selected-book');
+		// };
 		console.log('render');
 		return (
-			<span className={classes.join(' ')}>{this.props.text} | {this.state.company}</span>
+			<span className="footer-message" >{this.props.text} | {this.state.company}</span>
 		)
 	}
 
