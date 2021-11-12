@@ -3,6 +3,7 @@ import Heading from './components/Heading';
 import BookList from './components/BookList';
 import Counter from './components/Counter';
 import CarsList from './components/CarsList';
+import Footer from './components/Footer';
 
 
 const booksData = [
@@ -13,13 +14,6 @@ const booksData = [
     { _id: 5, title: null, description: "Missing Book" }
 ];
 
-const carsData = [
-    { brand: "Audi", model: "A4" },
-    { brand: "Kia", model: "Ceed" },
-    { brand: "Ford", model: "Mondeo" },
-    { brand: "Seat", model: "Leon" },
-    { brand: "Golf", model: "IV" }
-];
 
 function App() {
     return (
@@ -32,6 +26,7 @@ function App() {
             <Counter />
             <BookList books={booksData} />
             {/* <CarsList cars={carsData} /> */}
+            <Footer />
         </div>
     );
 }
