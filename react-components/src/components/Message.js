@@ -24,10 +24,17 @@ class Message extends React.Component {
 		console.log("ComponentWillUnmount");
 	};
 
+
+
 	render() {
+		let classes = [];
+
+		if (true) {
+			classes.push('selected-book');
+		};
 		console.log('render');
 		return (
-			<span>{this.props.text} | {this.state.company}</span>
+			<span className={classes.join(' ')}>{this.props.text} | {this.state.company}</span>
 		)
 	}
 
