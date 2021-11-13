@@ -1,0 +1,13 @@
+.defaultPerson {
+    font-size: 24px;
+    color: blue;
+    border-bottom: 3px solid black;
+    margin: 12px;
+}
+
+.tallPerson {
+    font-size: 24px;
+    color: crimson;
+    border-bottom: solid 3px black;
+    margin: 12px;
+}

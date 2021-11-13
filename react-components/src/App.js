@@ -6,8 +6,6 @@ import CarsList from './components/CarsList';
 import Footer from './components/Footer';
 
 
-
-
 function App() {
     return (
         <div className="site-wrapper">
