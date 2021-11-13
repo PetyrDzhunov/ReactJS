@@ -26,8 +26,12 @@ export default class App extends Component {
   };
 
   todoRows = () => this.state.todoItems.map((item) => (
-    <TodoRows key={item.action} item={item} callback={this.toggleDone} />));
+    <TodoRows key={item.action} item={item} toggleDone={this.toggleDone} deleteTask={this.deleteTask} />));
 
+  deleteTask = (todo) => {
+    let newTodos = this.state.todoItems.filter((item) => item.action !== todo.action);
+    this.setState({ todoItems: newTodos });
+  }
 
   updateValue = (event) => {
     this.setState({ newTodo: event.target.value });
@@ -59,6 +63,7 @@ export default class App extends Component {
               <tr>
                 <th>Task</th>
                 <th>Complete</th>
+                <th>Delete task</th>
               </tr>
             </thead>
             <tbody>{this.todoRows()}</tbody>
