@@ -1,9 +1,12 @@
-import './App.css';
+
+import Header from './components/Header';
+import style from './App.module.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Lets begin</h1>
+    <div className={style.app}>
+      <Header />
     </div>
   );
 }
