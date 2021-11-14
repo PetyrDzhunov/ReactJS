@@ -37,7 +37,16 @@ export default class App extends Component {
     this.setState({ newTodo: event.target.value });
   };
 
+  checkIfTodoExists = (todo) => {
+    for (const item of this.state.todoItems) {
+      if (item.action === todo) {
+        throw new Error('This todo already exist');
+      };
+    };
+  };
+
   newTodo = () => {
+    this.checkIfTodoExists(this.state.newTodo);
     this.setState({
       todoItems: [
         ...this.state.todoItems,
