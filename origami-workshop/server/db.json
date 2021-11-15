@@ -8,6 +8,16 @@
             "id": 2,
             "content": "Some content here2",
             "author": "Gosho"
+        },
+        {
+            "id": 3,
+            "content": "Random content here lorem ipsum dolor sit amet connsection elit. Alias laundimamtum ex.",
+            "author": "Stamat"
+        },
+        {
+            "id": 4,
+            "content": "Lorem ipsum is not being generated here because I dont get the general html emmets at json file",
+            "author": "Ivan"
         }
     ]
 }
