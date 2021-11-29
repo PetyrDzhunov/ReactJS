@@ -47,7 +47,9 @@ class App extends Component {
                         onMenuItemClick={this.onMenuItemClick.bind(this)}
                     />
                     <Routes>
-                        <Route path="/about" element={<About />} />
+                        <Route path="about" element={<About />}>
+                            <Route path=":name" element={<About />}></Route>
+                        </Route>
                         <Route path="/contactUs" element={<ContactUs />} />
                         <Route path="/" element={<Main posts={this.getPosts()} />} />
                     </Routes>
