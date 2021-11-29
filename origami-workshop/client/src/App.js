@@ -1,11 +1,13 @@
 import { Component } from 'react';
-
+import { Route, Routes, Link, NavLink, Redirect, Switch } from 'react-router-dom';
 import * as postService from './services/postService';
 
 import Header from './components/Header';
 import style from './App.module.css'
 import Menu from './components/Menu';
 import Main from './components/Main';
+import About from './components/About';
+import ContactUs from './components/ContactUs';
 
 class App extends Component {
     constructor(props) {
@@ -44,11 +46,15 @@ class App extends Component {
                     <Menu
                         onMenuItemClick={this.onMenuItemClick.bind(this)}
                     />
-                    <Main
-                        posts={this.getPosts()}
-                    />
+                    <Routes>
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contactUs" element={<ContactUs />} />
+                        <Route path="/" element={<Main posts={this.getPosts()} />} />
+                    </Routes>
+
                 </div>
-            </div>
+
+            </div >
         );
     };
 }
