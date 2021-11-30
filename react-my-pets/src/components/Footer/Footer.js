@@ -8,9 +8,6 @@ const Footer = () => {
     			margin-top: auto;
     			text-align: center;
     			background: #234465;
-				position:fixed;
-				bottom:0;
-				width:100%;
 			}
 
 			footer p {
