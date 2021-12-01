@@ -8,7 +8,7 @@ import PetDetails from './components/PetDetails/PetDetails';
 import DemoPage from './components/Demo';
 import CreatePet from './components/CreatePet/CreatePet';
 import EditPetDetails from './components/EditPetDetails/EditPetDetails';
-
+import EditPet from './components/EditPet/EditPet';
 function App() {
   return (
     <div className="container">
@@ -20,6 +20,7 @@ function App() {
         <Route path="/pets/details/:petId" element={<PetDetails />} />
         <Route path="/pets/details/:petId/edit" element={<EditPetDetails />} />
         <Route path="/pets/create" element={<CreatePet />} />
+        <Route path="/pets/:petId/edit" element={<EditPet />} />
         <Route path='/demo' element={<DemoPage />} />
       </Routes>
       <Footer />

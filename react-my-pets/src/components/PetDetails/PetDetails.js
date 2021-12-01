@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import * as petsService from '../../services/petService';
 const PetDetails = () => {
 	const params = useParams();
 	const { petId } = params;
@@ -14,17 +15,28 @@ const PetDetails = () => {
 			.catch(error => console.log(error));
 	}, [petId]);
 
+	const onPetButtonClickHandler = (e) => {
+		let incrementedLikes = Number(pet.likes) + 1;
+		petsService.pet(petId, incrementedLikes)
+			.then((updatedPet) => {
+				setPet((state) => ({ ...state, likes: Number(updatedPet.likes) }));
+			});
+	};
+
+
 	return (
-		<section class="detailsOtherPet">
+		<section className="detailsOtherPet">
 			<h3>{pet.name}</h3>
-			<p>Pet counter: {pet.likes} <a href="#"><button class="button"><i class="fas fa-heart"></i>
-				Pet</button></a>
+			<p>Pet counter: {pet.likes}
+				<button className="button" onClick={onPetButtonClickHandler}>
+					<i className="fas fa-heart"></i>Pet
+				</button>
 			</p>
-			<p class="img"><img alt="img" src={pet.imageURL} /></p>
-			<p class="description">{pet.description}</p>
-			<div class="pet-info">
-				<Link to={`/pets/details/${petId}/edit`}><button class="button">Edit</button></Link>
-				<Link to="#"><button class="button">Delete</button></Link>
+			<p className="img"><img alt="img" src={pet.imageURL} /></p>
+			<p className="description">{pet.description}</p>
+			<div className="pet-info">
+				<Link to={`/pets/details/${petId}/edit`}><button className="button">Edit</button></Link>
+				<Link to="#"><button className="button">Delete</button></Link>
 			</div>
 		</section>
 	);

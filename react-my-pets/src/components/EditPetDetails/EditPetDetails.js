@@ -1,12 +1,13 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import * as petsService from '../../services/petService';
 import InputError from '../Shared/InputError/InputError';
 
 const EditPetDetails = () => {
 	const [pet, setPet] = useState({});
 	const [errorMessage, setErrorMessage] = useState('');
+	const navigate = useNavigate();
 
 	const { petId } = useParams();
 	useEffect(() => {
@@ -17,7 +18,9 @@ const EditPetDetails = () => {
 
 	const onEditSubmitHandler = (e) => {
 		e.preventDefault();
-		console.log(e.target);
+		let updatedPet = { ...pet, description: e.target.description.value }
+		petsService.update(petId, updatedPet)
+			.then(() => navigate(`/pets/details/${petId}`));
 	};
 
 	const onDescriptionChangeHandler = (e) => {
