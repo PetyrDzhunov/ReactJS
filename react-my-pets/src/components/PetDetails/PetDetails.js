@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const PetDetails = () => {
 	const params = useParams();
 	const { petId } = params;
@@ -12,7 +12,7 @@ const PetDetails = () => {
 				setPet(petFetched)
 			})
 			.catch(error => console.log(error));
-	}, []);
+	}, [petId]);
 
 	return (
 		<section class="detailsOtherPet">
@@ -20,8 +20,12 @@ const PetDetails = () => {
 			<p>Pet counter: {pet.likes} <a href="#"><button class="button"><i class="fas fa-heart"></i>
 				Pet</button></a>
 			</p>
-			<p class="img"><img src={pet.imageURL} /></p>
+			<p class="img"><img alt="img" src={pet.imageURL} /></p>
 			<p class="description">{pet.description}</p>
+			<div class="pet-info">
+				<Link to={`/pets/details/${petId}/edit`}><button class="button">Edit</button></Link>
+				<Link to="#"><button class="button">Delete</button></Link>
+			</div>
 		</section>
 	);
 };
