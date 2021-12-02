@@ -8,7 +8,7 @@ const Categories = () => {
 	const params = useParams();
 	const { category } = params;
 	const [pets, setPets] = useState([]);
-	console.log(pets)
+
 
 	useEffect(() => {
 		let queryString;

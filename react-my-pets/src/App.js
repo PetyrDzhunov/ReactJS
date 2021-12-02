@@ -10,6 +10,10 @@ import CreatePet from './components/CreatePet/CreatePet';
 import EditPetDetails from './components/EditPetDetails/EditPetDetails';
 import EditPet from './components/EditPet/EditPet';
 function App() {
+
+  console.log(process.env.NODE_ENV);
+  console.log(process.env.REACT_APP_CUSTOM_ENV_VARIABLE);
+
   return (
     <div className="container">
       <Header />
