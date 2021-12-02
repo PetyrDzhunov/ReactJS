@@ -27,21 +27,26 @@ function App() {
       }
     });
   }, [])
+
+  const authInfo = {
+    isAuthenticated: Boolean(user),
+    username: user?.email
+  };
   return (
     <div className="container">
-      <Header username={user?.email} isAuthenticated={Boolean(user)} />
+      <Header {...authInfo} />
       <h1>{user?.email}</h1>
 
       <Routes>
-        <Route path="/" element={<Categories />} />
-        <Route path="/categories/:category" element={<Categories />} />
-        <Route path="/pets/details/:petId" element={<PetDetails />} />
-        <Route path="/pets/details/:petId/edit" element={<EditPetDetails />} />
-        <Route path="/pets/create" element={<CreatePet />} />
-        <Route path="/pets/:petId/edit" element={<EditPet />} />
-        <Route path='/demo' element={<DemoPage />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        <Route path="/" element={<Categories  {...authInfo} />} />
+        <Route path="/categories/:category" element={<Categories {...authInfo} />} />
+        <Route path="/pets/details/:petId" element={<PetDetails  {...authInfo} />} />
+        <Route path="/pets/details/:petId/edit" element={<EditPetDetails {...authInfo} />} />
+        <Route path="/pets/create" element={<CreatePet {...authInfo} />} />
+        <Route path="/pets/:petId/edit" element={<EditPet {...authInfo} />} />
+        <Route path='/demo' element={<DemoPage {...authInfo} />} />
+        <Route path='/login' element={<Login {...authInfo} />} />
+        <Route path='/register' element={<Register {...authInfo} />} />
       </Routes>
       <Footer />
     </div>

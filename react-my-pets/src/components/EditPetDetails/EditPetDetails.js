@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import * as petsService from '../../services/petService';
 import InputError from '../Shared/InputError/InputError';
 
-const EditPetDetails = () => {
+const EditPetDetails = ({ isAuthenticated, username }) => {
 	const [pet, setPet] = useState({});
 	const [errorMessage, setErrorMessage] = useState('');
 	const navigate = useNavigate();
