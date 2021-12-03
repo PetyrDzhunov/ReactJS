@@ -5,7 +5,6 @@ import Header from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Categories from './components/Categories/Categories';
 import PetDetails from './components/PetDetails/PetDetails';
-import DemoPage from './components/Demo';
 import CreatePet from './components/CreatePet/CreatePet';
 import EditPetDetails from './components/EditPetDetails/EditPetDetails';
 import EditPet from './components/EditPet/EditPet';
@@ -44,7 +43,6 @@ function App() {
         <Route path="/pets/details/:petId/edit" element={<EditPetDetails {...authInfo} />} />
         <Route path="/pets/create" element={<CreatePet {...authInfo} />} />
         <Route path="/pets/:petId/edit" element={<EditPet {...authInfo} />} />
-        <Route path='/demo' element={<DemoPage {...authInfo} />} />
         <Route path='/login' element={<Login {...authInfo} />} />
         <Route path='/register' element={<Register {...authInfo} />} />
       </Routes>
