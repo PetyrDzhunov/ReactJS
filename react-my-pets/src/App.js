@@ -8,6 +8,7 @@ import PetDetails from './components/PetDetails/PetDetails';
 import CreatePet from './components/CreatePet/CreatePet';
 import EditPetDetails from './components/EditPetDetails/EditPetDetails';
 import EditPet from './components/EditPet/EditPet';
+import AdvancedTechniques from './components/AdvancedTechniques/AdvancedTechniques';
 
 import { auth } from './utils/firebase';
 import Login from './components/Login/Login';
@@ -45,6 +46,7 @@ function App() {
         <Route path="/pets/:petId/edit" element={<EditPet {...authInfo} />} />
         <Route path='/login' element={<Login {...authInfo} />} />
         <Route path='/register' element={<Register {...authInfo} />} />
+        <Route path="/advanced-techniques" element={<AdvancedTechniques />} />
       </Routes>
       <Footer />
     </div>
